@@ -1,6 +1,10 @@
 /*http://jsfiddle.net/vkVLk/3/*/
 /*http://jsfiddle.net/vkVLk/4/*/
 /*http://jsfiddle.net/vkVLk/6/*/
+/*
+ Use the hasOwnProperty shiv by kangax
+ if Safari 2.0 compatibility is required
+*/
 var pubsubz = {};
 (function(q){
     
