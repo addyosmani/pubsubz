@@ -16,7 +16,7 @@ var pubsubz = {};
         setTimeout( function(){
        
 			var subscribers = topics[topic],
-            	len = subscribers ? subscribers.length :0; 
+			len = subscribers ? subscribers.length :0; 
 
         	while(len--){
             	subscribers[len].func(topic, args);
