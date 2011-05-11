@@ -1,13 +1,14 @@
-/*
-	Copyright Addy Osmani 2011.
-	Released under the GPL
+/*!
+* Pub/Sub implementation
+* http://addyosmani.com/
+* Licensed under the GPL
 */
+
 var pubsubz = {};
 (function (q) {
 
     var topics = {},
         subUid = -1;
-
 
     q.publish = function (topic, args) {
 

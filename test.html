@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Pub/Sub Test</title>
+	<script type="text/javascript" src="pubsubz.min.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+
+		var testSubscriber = function( topics , data ){
+		    console.log( topics + ": " + data );
+		};
+
+		var testSubscription = pubsubz.subscribe( 'example1', testSubscriber );
+
+		pubsubz.publish( 'example1', 'hello world!' );
+		pubsubz.publish( 'example1', ['test','a','b','c'] );
+		pubsubz.publish( 'example1', [{'color':'blue'},{'text':'hello'}] );
+
+		setTimeout(function(){
+		    pubsubz.unsubscribe( testSubscription );
+		}, 0);
+		
+		pubsubz.publish( 'example1', 'hello again!' );
+		
+	</script>
+	<p>
+		<h1>pubsubz Test</h1>
+		<p>
+			Run with Firebug or a console simulator open.
+		</p>
+	</p>
+</body>
+</html>
