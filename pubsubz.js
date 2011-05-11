@@ -13,14 +13,14 @@ var pubsubz = {};
             return false;
         }
         
+        setTimeout( function(){
+       
+			var subscribers = topics[topic],
+            	len = subscribers ? subscribers.length :0; 
 
-        
-         setTimeout( function(){
-                     var subscribers = topics[topic],
-            len = subscribers ? subscribers.length :0; //?
-        while(len--){
-            subscribers[len].func(topic, args);
-        }}, 0);
+        	while(len--){
+            	subscribers[len].func(topic, args);
+        	}}, 0);
 
         return true;
 
@@ -51,4 +51,3 @@ var pubsubz = {};
         return false;
     };
 }(pubsubz));
-//
