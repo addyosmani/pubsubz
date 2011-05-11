@@ -17,7 +17,6 @@ var pubsubz = {};
         }
 
         setTimeout(function () {
-
             var subscribers = topics[topic],
                 len = subscribers ? subscribers.length : 0;
 
