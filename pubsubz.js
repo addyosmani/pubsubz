@@ -2,6 +2,7 @@
 * Pub/Sub implementation
 * http://addyosmani.com/
 * Licensed under the GPL
+* http://jsfiddle.net/LxPrq/
 */
 
 var pubsubz = {};
