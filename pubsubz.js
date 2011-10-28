@@ -5,13 +5,14 @@
 * http://jsfiddle.net/LxPrq/
 */
 
-var pubsubz = {};
-(function (q) {
+
+;(function ( window, doc, undef ) {
 
     var topics = {},
-        subUid = -1;
+        subUid = -1,
+        pubsubz ={};
 
-    q.publish = function (topic, args) {
+    pubsubz.publish = function ( topic, args ) {
 
         if (!topics[topic]) {
             return false;
@@ -30,7 +31,7 @@ var pubsubz = {};
 
     };
 
-    q.subscribe = function (topic, func) {
+    pubsubz.subscribe = function ( topic, func ) {
 
         if (!topics[topic]) {
             topics[topic] = [];
@@ -44,7 +45,7 @@ var pubsubz = {};
         return token;
     };
 
-    q.unsubscribe = function (token) {
+    pubsubz.unsubscribe = function ( token ) {
         for (var m in topics) {
             if (topics[m]) {
                 for (var i = 0, j = topics[m].length; i < j; i++) {
@@ -57,4 +58,11 @@ var pubsubz = {};
         }
         return false;
     };
-}(pubsubz));
+
+    getPubSubz = function(){
+        return pubsubz;
+    };
+
+    window.pubsubz = getPubSubz();
+
+}( this, this.document ));
