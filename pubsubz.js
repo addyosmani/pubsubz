@@ -7,6 +7,7 @@
 
 
 ;(function ( window, doc, undef ) {
+   'use strict';
 
     var topics = {},
         subUid = -1,
@@ -59,7 +60,7 @@
         return false;
     };
 
-    getPubSubz = function(){
+    var getPubSubz = function(){
         return pubsubz;
     };
 
